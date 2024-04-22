@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/9dd3603324.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Customer Page</title>
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            scrollbar-color: #fd641d !important;
+            webkit-scrollbar-color: #fd641d !important;
+        }
+
+        h1,
+        .h1,
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4 {
+            font-family: "Playfair Display", serif;
+            color: black;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .h3,
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        .site-footer {
+
+            background: #645f56;
+            background: url('../images/40.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            font-size: 14px;
+            color: #ffffff;
+            padding: 30px 0;
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .row {
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .site-footer .widget {
+            margin-bottom: 40px;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-footer .widget h3 {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .list-unstyled {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        ul>li {
+            display: list-item;
+            text-align: -webkit-match-parent;
+            padding: 10px 10px 10px 0px;
+        }
+
+        .site-footer .social li {
+            display: inline-block;
+        }
+
+        .site-footer .social li a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 50%;
+            color: #000000;
+        }
+
+        .site-footer .social li a>span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        [class^="icon-"] {
+            font-family: 'icomoon' !important;
+            font-style: normal;
+            /* font-weight: normal; */
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .site-footer .widget .links li a {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        ol,
+        ul {
+            margin-top: 0;
+            margin-bottom: 26px;
+        }
+
+        .float-left {
+            float: left !important;
+        }
+
+        .site-footer .widget .links li a:hover {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 1s;
+        }
+
+        .col-lg-3 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .col-lg-12>p {
+            margin-top: 50px;
+        }
+
+        hr {
+            background-color: white;
+            height: 1px;
+            width: 100%;
+        }
+
+        .menu,
+        .menu-subsection,
+        .admin-form,
+        .Gallery {
+            background: #fee2b3;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .col-lg-3 .heading h3 {
+            font-size: 35px;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, .5);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .1rem;
+        }
+
+        .red,
+        .price {
+            color: #ff5200;
+        }
+
+
+        .img-fluid {
+            max-width: 100%;
+            width: 287px;
+            height: 165px;
+            border-radius: 16px;
+        }
+
+        .image-fluid {
+            width: 30vw;
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+        }
+
+        .drink {
+            max-width: 100%;
+            height: 30px;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        .menu-down li a {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 10px;
+            padding: 15px 20px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 30px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .menu-down li a:hover {
+            background: #ffffff;
+            transition: 1s;
+        }
+
+        .menu-down li img {
+            width: 25px;
+            margin-right: 20px;
+        }
+
+        #main-slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .col-lg-8 {
+            height: px;
+        }
+
+        .product h3 {
+            margin-top: 25px;
+        }
+
+        .sub-item {
+
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .sub-item>div h3 {
+            font-size: 20px;
+            padding-top: 10px;
+        }
+
+        figure {
+            -webkit-box-flex: 0;
+            flex: 0 0 60px;
+        }
+
+        .sub-item:hover {
+            text-decoration: none;
+            background: white;
+            transition: 1s;
+        }
+
+        .add {
+            padding: auto;
+            margin-left: 900px;
+        }
+
+        .delete {
+            margin-left: 50px;
+            padding-bottom: 0px;
+        }
+
+        .admin {
+            margin: 0 auto;
+            font-size: 20px;
+            margin-bottom: 50px;
+            overflow: scroll;
+        }
+
+        .admin::-webkit-scrollbar {
+            display: none;
+        }
+
+        button {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+        }
+
+        .button {
+            text-decoration: none;
+            color: white;
+            background: #ff5200;
+            padding: 15px 30px 15px 30px;
+            border-radius: 30px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            border: none;
+            width: 133px;
+            height: 47px;
+            margin-right: 19px;
+            border-radius: 23.5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background: #ff5200;
+            font-size: 15px;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: montserrat-semibold;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            box-shadow: 0 0 1px transparent;
+        }
+
+        .book {
+            text-decoration: none;
+            color: white;
+            background: #ff5200;
+            padding: 10px 20px 10px 20px;
+            border-radius: 26px;
+            margin-top: 200px;
+        }
+
+        .contact-info i {
+            font-size: 20px;
+            float: left;
+            width: 44px;
+            height: 44px;
+            background: #ff5200;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            /* display: flex; */
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border-radius: 50px;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+            color: #ffffff;
+        }
+
+        .contact-info h4 {
+            font-size: 18px;
+            padding: 0 0 0 60px;
+        }
+
+        .contact-info p {
+            padding: 0 0 0 60px;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        .form-control {
+            display: block;
+            width: 100%;
+            height: calc(1.5em + 0.75rem + 2px);
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .form-control,
+        .custom-select {
+            border: none;
+            font-size: 16px;
+            height: 45px;
+            background: transparent;
+            border: 1px solid #43434d;
+            border-radius: 0;
+            color: #000000;
+        }
+
+        .file {
+            content: 'Select some files';
+            display: inline-block;
+            background: linear-gradient(top, #f9f9f9, #e3e3e3);
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 5px 8px;
+            outline: none;
+            white-space: nowrap;
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-shadow: 1px 1px #fff;
+            font-weight: 700;
+            font-size: 10pt;
+        }
+
+        .icon-room {
+            content: "\e8b4";
+        }
+
+        .add-items {
+            padding-left: 15px;
+            color: #ff5200;
+        }
+
+        .del-items {
+            padding-left: 10px;
+            color: #ff5200;
+        }
+
+        .site-nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .overlay {
+            position: relative;
+            z-index: 2;
+        }
+
+        .site-logo {
+            margin-left: 20px;
+        }
+
+        .menu-logo:hover {
+            color: #ff5200;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: #fff;
+            font-weight: 700;
+            left: 30px;
+        }
+
+        .site-get {
+            display: flex;
+        }
+
+        .heading {
+            font-size: 70px;
+            font-weight: 700;
+            color: #fd641d;
+        }
+
+        .caption {
+            text-transform: uppercase;
+            color: black;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: .1rem;
+        }
+
+        .sub-cap {
+            color: black;
+            font-size: 16px;
+        }
+
+        .btn {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 30px;
+            color: #f9f9f9;
+            padding-right: 30px;
+            border-radius: 30px;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: .05rem;
+            border: #ff5200;
+            background-color: #ff5200;
+
+        }
+
+        .social-home li a {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            display: inline-block;
+            background: white;
+            border-radius: 50%;
+            color: #ff5200;
+        }
+
+        .social-home {
+            position: absolute;
+            right: 0;
+            bottom: 30px;
+            right: 30px;
+            ;
+            z-index: 2;
+        }
+
+        .social-home li {
+            display: inline-block;
+        }
+
+        .social-home li a span {
+            position: absolute;
+            top: 31%;
+            left: 34%;
+        }
+
+        .home-main {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('../images/hero-bg.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            z-index: 1;
+
+        }
+
+        .box-card {
+            min-height: 64vh;
+            max-height: 80vh;
+        }
+
+
+        .site-navbar {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navig a {
+            text-decoration: none;
+
+            color: rgba(255, 255, 255, 0.51)
+        }
+
+        .navig a:hover {
+            color: #f9f9f9;
+        }
+
+        .add-items,
+        .des-add {
+            padding-left: 15px;
+            color: #ff5200;
+        }
+
+        .del-items,
+        .des-del {
+            padding-left: 10px;
+            color: #ff5200;
+        }
+
+        .search-button {
+            border: 2px solid #ff5200;
+            border-radius: 16px;
+        }
+
+        .search-button:hover {
+            background: #ff5200;
+            color: white;
+        }
+
+        .testimonial .author img {
+            width: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .author {
+            display: block;
+        }
+
+        button {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+        }
+
+        #cart {
+            height: 50px;
+            width: 50px;
+            border: none;
+            padding: 10px;
+            background-color: #fd641d;
+            border-radius: 50px;
+            margin-left: 10px;
+        }
+
+        #cart:hover {
+            background-color: white;
+        }
+
+        .user {
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .product {
+            width: 35vw;
+            height: auto;
+            margin: 1rem 2rem;
+            padding: 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.408);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product:hover {
+            cursor: pointer;
+            text-decoration: none;
+            background: #ffffff;
+            transition: 1s;
+        }
+
+        a span {
+            text-decoration: none !important;
+            color: #000;
+        }
+
+        .footer-sub {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width:768px) {
+            .testimonial{
+                font-size: 14px;
+            }
+            .site-footer {
+                padding: 20px 0;
+            }
+
+            .footer-sub {
+                font-size: 12px !important;
+            }
+
+            .carousel-indicators {
+                top: 102% !important;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .box-card {
+                height: auto;
+                max-height: 90vh;
+            }
+
+            .price {
+                font-size: 22px !important;
+            }
+
+            a span {
+                font-size: 14px;
+            }
+
+            h2 {
+                font-size: 24px !important;
+            }
+
+            .btn {
+                padding: 10px 15px;
+                font-size: 10px;
+            }
+
+            .heading {
+                font-size: 48px;
+            }
+
+            .product {
+                width: 35vw;
+                height: auto;
+                margin: 0.5rem 1rem;
+                padding: 0.75rem;
+                border: 1px solid rgba(0, 0, 0, 0.408);
+                border-radius: 10px;
+            }
+
+            .site-nav {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            #tab-menu {
+                display: none !important;
+            }
+
+            .navig a {
+                font-size: 14px;
+            }
+
+            .menu-heading {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+
+            .box-card {
+                height: 90vh;
+            }
+
+            a span {
+                font-size: 14px;
+            }
+
+            .price {
+                font-size: 24px;
+            }
+
+            .product div {
+                font-size: 14px;
+            }
+
+            .menu,
+            .menu-subsection,
+            .admin-form,
+            .Gallery {
+                background: #fee2b3;
+                padding: 70px 0;
+                position: relative;
+            }
+
+            .heading {
+                font-size: 36px;
+            }
+
+            .product {
+                width: 60vw;
+
+            }
+
+            .product h1,
+            .h1,
+            h2,
+            .h2,
+            h3,
+            .h3,
+            h4,
+            .h4 {
+                font-family: "Playfair Display", serif;
+                color: black;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+                line-height: 1.2;
+                font-size: 1.75rem;
+            }
+
+            .h3,
+            h3 {
+                font-size: 1.75rem;
+            }
+
+            .site-nav {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            #tab-menu {
+                display: none !important;
+            }
+
+            .navig a {
+                font-size: 14px;
+            }
+
+            .menu-heading {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<!-- url('../images/40.svg'); background-size: cover;
+background-position: center;
+background-repeat: no-repeat; -->
+<body>
+    <nav class="fixed-top navbar navbar-expand-lg  justify-content-between navbar-dark w-100 m-auto"
+        style="background: url('../images/27.svg'); background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;">
+        <a class="navbar-brand" href="#">Sachi Communications</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#Section0">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#Section1">Services</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="#Section3" class="nav-link">Testimonials</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#Section4">Contact Us</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <section class="Home-Header mt-5" id="Section0">
+        <div class="home-main">
+            <div class="container">
+                <div class="row align-items-center justify-items-center">
+                    <div class="col-lg-12 mb-4" style=" padding-top:50px;">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 text-center"><span class="caption">Welcome to</span>
+                                <h1 class="heading mb-4 mt-4" data-aos="fade-up" data-aos-delay="100">Sachi
+                                    Communications
+                                </h1>
+                                <div class="mb-4">
+                                    <p class="sub-cap" data-aos="fade-up" data-aos-delay="100">We believe in the power
+                                        of effective marketing to transform businesses and drive success. With a team of
+                                        passionate experts and a commitment to innovation, we're here to elevate your
+                                        brand and expand your reach.</p>
+                                </div>
+                                <p class="con-btn" data-aos="fade-up" data-aos-delay="100"><a href="#Section1"
+                                        class="btn xplore mb-5" style="text-decoration: none;">Explore
+                                        Now</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="Section1">
+        <div class="admin">
+            <div class="menu-items">
+                <div class="items">
+                    <div class="row align-items-center mb-4 ">
+                        <div class="col-12 d-flex mb-2 align-items-center align-items-sm-center justify-content-center menu-heading"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <h2 class="text-black text-center text-md-left ">SERVICES <span class="red"> OFFERED.</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w-100">
+                    <div class=" mb-4 d-flex align-items-center justify-content-center  col-12 flex-wrap ml-3">
+                       
+  <div class="product">
+    <a href="">
+        <img src="../images/digimark.svg" alt="DB Image" class="img-fluid">
+    </a>
+    <div>
+        <h3 class="price">
+            Digital Marketing
+        </h3>
+        <div class="d-flex">
+            <div>Elevate your online presence with targeted strategies for growth and engagement
+                across digital platforms.</div>
+        </div>
+    </div>
+</div>
+<div class="product">
+    <a href="">
+        <img src="../images/prddev.svg" alt="DB Image" class="img-fluid">
+    </a>
+    <div>
+        <h3 class="price">
+            Product Marketing
+        </h3>
+        <div class="d-flex">
+            <div> Position your products for success with tailored campaigns that highlight
+                their unique value and drive conversions.</div>
+        </div>
+    </div>
+</div>
+<div class="product">
+    <a href="">
+        <img src="../images/outreachdev.svg" alt="DB Image" class="img-fluid">
+    </a>
+    <div>
+        <h3 class="price">
+            Outreach Marketing
+        </h3>
+        <div class="d-flex">
+            <div> Expand your reach and connect with your audience through strategic outreach
+                campaigns that drive meaningful engagement.</div>
+        </div>
+    </div>
+</div>
+<div class="product">
+    <a href="">
+        <img src="../images/webdev.svg" alt="DB Image" class="img-fluid">
+    </a>
+    <div>
+        <h3 class="price">
+            Website Development
+        </h3>
+        <div class="d-flex">
+            <div>Build your online presence with expertly crafted websites designed to captivate
+                audiences and drive results.</div>
+        </div>
+    </div>
+</div>
+<div class="product">
+    <a href="">
+        <img src="../images/walkthr.svg" alt="DB Image" class="img-fluid">
+    </a>
+    <div>
+        <h3 class="price">
+            Walkthrough Videos
+        </h3>
+        <div class="d-flex">
+            <div>Showcase your spaces or products with immersive walkthrough videos that captivate and engage your audience effectively.</div>
+        </div>
+    </div>
+</div>
+<div class="product">
+    <a href="">
+        <img src="../images/itservice.svg" alt="DB Image" class="img-fluid">
+    </a>
+    <div>
+        <h3 class="price">
+            IT Services
+        </h3>
+        <div class="d-flex">
+            <div>Streamline your operations with comprehensive IT solutions tailored to your business needs, ensuring efficiency and reliability.</div>
+        </div>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="menu-subsection pt-0 pb-6" id="digmark" style="background: rgba(245, 201, 126, 0.9);">
+        <div class="container">
+            <div class="col-lg-12 text-center mb-5 pt-5" data-aos="fade-up" data-aos-delay="0"><span
+                    class="subtitle">Sachi Communications</span>
+                <h2>Why Choose<span class="red"> Us</span></h2>
+            </div>
+            <div class="row d-flex flex-column flex-sm-row align-items-center justify-content-center ">
+                <div class="box-card col-8 col-sm-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="0"><a
+                        href="" class="d-flex flex-column align-items-center h-100 sub-item">
+                        <figure class=" p-1"><img src="../images/contentmark.svg" alt="image" class="img-fluid">
+                        </figure>
+                        <div class="d-flex flex-column align-items-center ">
+                            <h3 class="text-center price">Strategic Approach</h3><span class=" text-center">We take a
+                                holistic view of your business and market to develop customized strategies that align
+                                with your goals and objectives.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="box-card col-8 col-sm-6 col-lg-3 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="0"><a
+                        href="" class="d-flex flex-column align-items-center h-100 sub-item">
+                        <figure class=" p-1"><img src="../images/digimark2.svg" alt="image" class="img-fluid">
+                        </figure>
+                        <div class="d-flex flex-column align-items-center ">
+                            <h3 class="text-center price">Creative Excellence</h3><span class=" text-center">Our team of
+                                creative minds brings fresh ideas and innovative solutions to every project, ensuring
+                                your brand stands out in a crowded digital landscape.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="box-card col-8 col-sm-6 col-lg-3 mb-4 mb-lg-0 box-card" data-aos="fade-up"
+                    data-aos-delay="0"><a href="" class="d-flex flex-column align-items-center h-100 sub-item">
+                        <figure class=" p-1"><img src="../images/emailmark.svg" alt="image" class="img-fluid">
+                        </figure>
+                        <div class="d-flex flex-column align-items-center ">
+                            <h3 class="text-center price">Measurable Results</h3><span class=" text-center">We're
+                                committed to delivering measurable results and ROI, leveraging data-driven insights to
+                                continuously optimize and improve your marketing efforts.</span>
+                        </div>
+                    </a>
+                </div>
+                
+            </div>
+    </section>
+  
+    <section class="Gallery" id="Section3">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-column align-items-center justify-content-center col-lg-12 mb-lg-0 mr-auto"
+                    data-aos="fade-up" data-aos-delay="0"><span class="subtitle">TESTIMONIALS</span>
+                    <h2 class="mb-5 text-black text-center text-md-left">Satisfied <strong style="color: #ff5200;">
+                            Customers</strong></h2>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators mt-6">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" style="height: 330px;">
+                            <div class="carousel-item  active">
+                                <div class="items d-block" style="background: inherit">
+                                    <div class="testimonial">
+                                        <div class="author">
+                                            <div class="user"><i class="fa-solid fa-user"></i></div>
+                                            <h3>Sanath Karmakar</h3>
+                                            <p class="details mb-0">Karmakar Works</p>
+                                        </div>
+                                        <div class="quote"><b style="font-size: x-large;"> " </b> </div>Sachi
+                                        Communications has been instrumental in elevating our brand presence online.
+                                        Their expertise in social media marketing has significantly increased our
+                                        engagement and reach, resulting in tangible business growth. Highly recommend!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="items d-block" style="background:inherit ;">
+                                    <div class="testimonial">
+                                        <div class="author">
+                                            <div class="user"><i class="fa-solid fa-user"></i></div>
+                                            <h3>Hitesh Reddy</h3>
+                                            <p class="details mb-0">Kenmark Solutions</p>
+                                        </div>
+                                        <div class="quote"><b style="font-size: x-large;"> " </b> </div>Working with
+                                        Sachi Communications has been a game-changer for our email marketing efforts.
+                                        Their personalized approach and attention to detail have helped us build
+                                        stronger relationships with our audience and drive conversions. We're thrilled
+                                        with the results!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="items d-block" style="background:inherit ;">
+                                    <div class="testimonial">
+                                        <div class="author">
+                                            <div class="user"><i class="fa-solid fa-user"></i></div>
+                                            <h3>Santosh Jadhav</h3>
+                                            <p class="details mb-0">Shivraj Enterprises </p>
+                                        </div>
+                                        <div class="quote"><b style="font-size: x-large;"> " </b> </div>The team at
+                                        Sachi Communications truly understands our brand and delivers exceptional
+                                        content that resonates with our target audience. Their creative solutions and
+                                        strategic insights have been invaluable in helping us achieve our marketing
+                                        goals. A pleasure to work with!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </button>
+                    </div>
+
+                </div>
+                <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0"><span class="subtitle">GALLERIES</span>
+                    <h2 class="mb-5"> Photo <strong style="color: #ff5200;"> Galleries </strong></h2>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4"><a href=""><img src="../images/galimg1.png" alt=""
+                                    class="img-fluid"></a></div>
+                        <div class="col-lg-6 mb-4"><a href=""><img src="../images/galimg2.png" alt=""
+                                    class="img-fluid"></a></div>
+                        <div class="col-lg-6 mb-4"><a href=""><img src="../images/galimg3.png" alt=""
+                                    class="img-fluid"></a></div>
+                        <div class="col-lg-6 mb-4"><a href=""><img src="../images/galimg4.png" alt=""
+                                    class="img-fluid"></a></div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section class="rev-table bg-img py-5 fixed " id="Section4" style="background:rgba(245, 201, 126, 0.9);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 text-center"><span class="subtitle">LET'S GET STARTED</span>
+                    <h3 class="mb-4">Book a Meeting</h3>
+                    <p>SANKET JADHAV - <span class="red"> +91 8285909999</span>
+                    </p>
+                    <p>Email- <span class="red">sachicommunications10@gmail.com</span> </p>
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+    <div class="site-footer" id="Section5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="price text-center mb-4 mt-4 foot-head" data-aos="fade-up" data-aos-delay="100"
+                        data-aos-offset="100">Sachi Communications
+                    </h1>
+                </div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center ">
+                    <p class="footer-sub">Copyright © All rights reserved | Developed for Sachi Communications</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 200,
+                duration: 1000,
+            });
+        </script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script> -->
+
+</body>
+
+</html>
